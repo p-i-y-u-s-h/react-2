@@ -3,11 +3,13 @@ import { useState,useEffect } from 'react'
 function App(){
   let [counterVisible , setCounterVisible] = useState(true);
 
-  useEffect(function(){
-    setInterval(function(){
-      setCounterVisible(c => !c)
-    },5000)
-  })
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCounterVisible((c) => !c);
+    }, 5000);
+
+    return () => clearInterval(interval); 
+  }, []);
   return <div>
     {counterVisible && <Counter></Counter>}
   </div>
