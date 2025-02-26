@@ -1,6 +1,7 @@
 import { useState,useEffect } from 'react'
 
 function App(){
+
   let [counterVisible , setCounterVisible] = useState(true);
 
   useEffect(() => {
@@ -16,6 +17,7 @@ function App(){
 }
 
 function Counter(){
+  
   const [count,setCount] = useState(0);
 
   useEffect(function(){
