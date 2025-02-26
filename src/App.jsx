@@ -12,13 +12,16 @@ function App(){
     return () => clearInterval(interval); 
   }, []);
   return <div>
-    {counterVisible && <Counter></Counter>}
+    <div style={{visibility:counterVisible? "visible" : "hidden"}}>
+      <Counter></Counter>
+    </div>
+    {/* {counterVisible && <Counter></Counter>} */}
   </div>
 }
 
 function Counter(){
-  
-  const [count,setCount] = useState(0);
+   
+  const [count,setCount] = useState(1);
 
   useEffect(function(){
     const interval = setInterval(function(){
